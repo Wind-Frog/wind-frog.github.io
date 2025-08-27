@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WindFrog's Web Games Collection - Play Free Online Games</title>
-    <meta name="description" content="Discover WindFrog's collection of free web games including sports, puzzle and other fun online games. Play directly in your browser with no downloads required.">
+    <meta name="description" content="Discover web games created by WindFrog including sports, puzzle and other fun online games. Play directly in your browser with no downloads required.">
     <meta name="keywords" content="web games">
     <meta name="author" content="Wind Frog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://windfrog.github.io/">
+    <meta property="og:url" content="https://wind-frog.github.io/">
     <meta property="og:title" content="WindFrog's Web Games Collection">
-    <meta property="og:description" content="Play free online sports, puzzle and other fun web games curated by WindFrog.">
-    <meta property="og:image" content="https://windfrog.github.io/social-preview.jpg">
+    <meta property="og:description" content="Play free online sports, puzzle and other fun web games created by WindFrog.">
+    <meta property="og:image" content="https://wind-frog.github.io/ico.png">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://windfrog.github.io/">
+    <meta property="twitter:url" content="https://wind-frog.github.io/">
     <meta property="twitter:title" content="WindFrog's Web Games Collection">
-    <meta property="twitter:description" content="Play free online sports, puzzle and other fun web games curated by WindFrog.">
-    <meta property="twitter:image" content="https://windfrog.github.io/social-preview.jpg">
+    <meta property="twitter:description" content="Play free online sports, puzzle and other fun web games created by WindFrog.">
+    <meta property="twitter:image" content="https://wind-frog.github.io/ico.png">
     
     <style>
         :root {
@@ -30,6 +30,7 @@
             --card-bg: #ffffff;
             --shadow: 0 10px 20px rgba(0,0,0,0.1);
             --transition: all 0.3s ease;
+            --wechat-green: #07C160; /* 微信绿色 */
         }
         
         * {
@@ -53,13 +54,43 @@
             padding: 0 20px;
         }
         
+        /* 导航选项卡 */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 2rem auto;
+            max-width: 500px;
+            border-radius: 50px;
+            background: white;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .nav-tab {
+            flex: 1;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .nav-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .nav-tab:not(.active):hover {
+            background: #f0f0f0;
+        }
+        
         header {
             text-align: center;
             padding: 3rem 1rem;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
             margin-bottom: 2rem;
-            border-radius: 0 0 20px 20px;
             box-shadow: var(--shadow);
         }
         
@@ -74,6 +105,15 @@
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+        }
+        
+        .creator-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
         }
         
         h2 {
@@ -177,7 +217,6 @@
             color: white;
             padding: 3rem 0;
             margin-top: 4rem;
-            border-radius: 20px 20px 0 0;
         }
         
         .about {
@@ -204,6 +243,12 @@
             max-width: 800px;
         }
         
+        .about-content h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
         @media (max-width: 768px) {
             .games-grid {
                 grid-template-columns: 1fr;
@@ -217,38 +262,28 @@
                 flex-direction: column;
                 text-align: center;
             }
-        }
-        
-        .social-share {
-            display: flex;
-            gap: 15px;
-            margin-top: 2rem;
-        }
-        
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--light);
-            color: var(--dark);
-            transition: var(--transition);
-        }
-        
-        .social-btn:hover {
-            transform: translateY(-3px);
-            background: var(--primary);
-            color: white;
+            
+            .nav-tabs {
+                flex-direction: column;
+                border-radius: 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- 导航选项卡 -->
+    <div class="container">
+        <div class="nav-tabs">
+            <a href="index.html" class="nav-tab active">Web Games</a>
+            <a href="online-tools.html" class="nav-tab">Online Tools</a>
+        </div>
+    </div>
+    
     <header>
         <div class="container">
-            <h1>WindFrog's Web Games Collection</h1>
-            <p class="subtitle">Discover the best free online games - sports, puzzles and more. Play directly in your browser with no downloads required.</p>
+            <h1>WindFrog's Web Games</h1>
+            <p class="subtitle">Discover web games created by WindFrog - sports, puzzles and more. Play directly in your browser with no downloads required.</p>
+            <div class="creator-badge">All games created by WindFrog</div>
         </div>
     </header>
     
@@ -291,12 +326,12 @@
                 
                 <div class="game-card">
                     <div class="game-image">
-                        <img src="https://baseballbrosunblocked.com/images/ico-192x192.webp" alt="Baseball Bros Game">
+                        <img src="https://baseballbrosunblocked.net/images/ico-192x192.webp" alt="Baseball Bros Game">
                     </div>
                     <div class="game-content">
                         <h3>Baseball Bros</h3>
                         <p class="game-description">Step up to the plate and hit home runs in this exciting baseball game. Perfect your timing and become a baseball legend.</p>
-                        <a href="https://baseballbrosunblocked.com" class="play-btn" target="_blank">Play Baseball Bros →</a>
+                        <a href="https://baseballbrosunblocked.net" class="play-btn" target="_blank">Play Baseball Bros →</a>
                     </div>
                 </div>
                 
@@ -407,13 +442,7 @@
                 <div class="avatar">WF</div>
                 <div class="about-content">
                     <h3>About Wind Frog</h3>
-                    <p>Wind Frog is a seasoned web game publisher with 15 years of experience in the gaming industry. Based in the San Francisco Bay Area, Wind Frog has been actively contributing to major gaming forums and communities, sharing expertise and passion for high-quality web games.</p>
-                    <div class="social-share">
-                        <a href="#" class="social-btn">♡</a>
-                        <a href="#" class="social-btn">f</a>
-                        <a href="#" class="social-btn">t</a>
-                        <a href="#" class="social-btn">in</a>
-                    </div>
+                    <p>Wind Frog is a seasoned web game developer with 15 years of experience in the gaming industry. Based in the San Francisco Bay Area, Wind Frog has been actively contributing to major gaming forums and communities, sharing expertise and passion for high-quality web games. All games on this site are created by Wind Frog.</p>
                 </div>
             </div>
         </div>
@@ -424,7 +453,7 @@
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "WindFrog's Web Games Collection",
-      "description": "A collection of free online web games including sports, puzzle and other fun games.",
+      "description": "A collection of free online web games created by WindFrog including sports, puzzle and other fun games.",
       "itemListElement": [
         {
           "@type": "Game",
@@ -444,7 +473,7 @@
           "@type": "Game",
           "position": 3,
           "name": "Speed Stars",
-          "url": "https://speedstarsunbocked.net",
+          "url": "https://speedstarsunblocked.net",
           "description": "Race against the fastest opponents in this thrilling running competition."
         },
         {
