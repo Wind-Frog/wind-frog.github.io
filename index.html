@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WindFrog's Web Games Collection - Play Free Online Games</title>
+    <meta name="description" content="Discover WindFrog's collection of free web games including sports, puzzle and other fun online games. Play directly in your browser with no downloads required.">
+    <meta name="keywords" content="web games">
+    <meta name="author" content="Wind Frog">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://windfrog.github.io/">
+    <meta property="og:title" content="WindFrog's Web Games Collection">
+    <meta property="og:description" content="Play free online sports, puzzle and other fun web games curated by WindFrog.">
+    <meta property="og:image" content="https://windfrog.github.io/social-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://windfrog.github.io/">
+    <meta property="twitter:title" content="WindFrog's Web Games Collection">
+    <meta property="twitter:description" content="Play free online sports, puzzle and other fun web games curated by WindFrog.">
+    <meta property="twitter:image" content="https://windfrog.github.io/social-preview.jpg">
+    
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --gray: #adb5bd;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            margin-bottom: 2rem;
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+            color: var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.2rem 0 0.8rem;
+            color: var(--secondary);
+        }
+        
+        .category {
+            margin-bottom: 3rem;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .game-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .game-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .game-card:hover .game-image img {
+            transform: scale(1.05);
+        }
+        
+        .game-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .game-description {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .play-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin-top: auto;
+        }
+        
+        .play-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .play-btn i {
+            margin-left: 8px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .about-content {
+            max-width: 800px;
+        }
+        
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        .social-share {
+            display: flex;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light);
+            color: var(--dark);
+            transition: var(--transition);
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-3px);
+            background: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>WindFrog's Web Games Collection</h1>
+            <p class="subtitle">Discover the best free online games - sports, puzzles and more. Play directly in your browser with no downloads required.</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="category">
+            <h2>Sports Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://playfootballbros.net/images/ico-192x192.webp" alt="Football Bros Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Football Bros</h3>
+                        <p class="game-description">Experience the thrill of multiplayer football in this exciting browser game. Challenge your friends or play against AI opponents.</p>
+                        <a href="https://playfootballbros.net" class="play-btn" target="_blank">Play Football Bros →</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://basketball-bros.online/images/ico-192x192.webp" alt="Basketball Bros Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Basketball Bros</h3>
+                        <p class="game-description">Show off your basketball skills in this fast-paced arcade game. Dunk, shoot and score your way to victory.</p>
+                        <a href="https://basketball-bros.online" class="play-btn" target="_blank">Play Basketball Bros →</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://speedstarsunbocked.net/images/ico-192x192.webp" alt="Speed Stars Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Speed Stars</h3>
+                        <p class="game-description">Race against the fastest opponents in this thrilling running competition. Upgrade your character and become the ultimate champion.</p>
+                        <a href="https://speedstarsunbocked.net" class="play-btn" target="_blank">Play Speed Stars →</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://baseballbrosunblocked.net/images/ico-192x192.webp" alt="Baseball Bros Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Baseball Bros</h3>
+                        <p class="game-description">Step up to the plate and hit home runs in this exciting baseball game. Perfect your timing and become a baseball legend.</p>
+                        <a href="https://baseballbrosunblocked.net" class="play-btn" target="_blank">Play Baseball Bros →</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://dinogame.onl/favicon.png" alt="Dino Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Dino Game</h3>
+                        <p class="game-description">Join the famous dinosaur on his adventure through the prehistoric world. Jump over obstacles and set a new high score.</p>
+                        <a href="https://dinogame.onl" class="play-btn" target="_blank">Play Dino Game →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="category">
+            <h2>Puzzle Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://chiikawapuzzle.co/images/ico-192x192.webp" alt="Chiikawa Puzzle Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Chiikawa Puzzle Game</h3>
+                        <p class="game-description">Solve adorable puzzles featuring the cute Chiikawa characters. Match pieces and complete challenging levels.</p>
+                        <a href="https://chiikawapuzzle.co" class="play-btn" target="_blank">Play Chiikawa Puzzle →</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://2048juego.com/ico.png" alt="2048 Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>2048 Juego</h3>
+                        <p class="game-description">The classic number combining game with a Spanish twist. Slide tiles and try to create the 2048 tile in this addictive puzzle.</p>
+                        <a href="https://2048juego.com" class="play-btn" target="_blank">Play 2048 Juego →</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://cupcakes2048.org/images/ico-192x192.webp" alt="2048 Cupcakes Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>2048 Cupcakes</h3>
+                        <p class="game-description">A delicious twist on the classic 2048 game. Combine matching cupcakes to create higher value treats in this sweet puzzle.</p>
+                        <a href="https://cupcakes2048.org" class="play-btn" target="_blank">Play 2048 Cupcakes →</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://color-block-jam.online/favicon.png" alt="Color Block Jam Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Color Block Jam</h3>
+                        <p class="game-description">Match colorful blocks in this vibrant puzzle game. Create combinations and clear the board in this challenging game.</p>
+                        <a href="https://color-block-jam.online" class="play-btn" target="_blank">Play Color Block Jam →</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://blockblast.dev/template/images/board.webp" alt="Block Blast Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Block Blast</h3>
+                        <p class="game-description">Blast through blocks in this exciting match-3 puzzle game. Create powerful combinations and clear levels with strategy.</p>
+                        <a href="https://blockblast.dev" class="play-btn" target="_blank">Play Block Blast →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="category">
+            <h2>Other Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://crazycattle3d.dev/images/ico-192x192.webp" alt="Crazy Cattle 3D Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Crazy Cattle 3D</h3>
+                        <p class="game-description">Round up crazy cattle in this fun 3D arcade game. Navigate challenging environments and complete your missions.</p>
+                        <a href="https://crazycattle3d.dev" class="play-btn" target="_blank">Play Crazy Cattle 3D →</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="https://blockbreaker.onl/template/images/breaker.webp" alt="Block Breaker Game">
+                    </div>
+                    <div class="game-content">
+                        <h3>Block Breaker</h3>
+                        <p class="game-description">The classic brick breaker game reimagined. Bounce your ball to break all blocks while avoiding obstacles.</p>
+                        <a href="https://blockbreaker.onl" class="play-btn" target="_blank">Play Block Breaker →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="about">
+                <div class="avatar">WF</div>
+                <div class="about-content">
+                    <h3>About Wind Frog</h3>
+                    <p>Wind Frog is a seasoned web game publisher with 15 years of experience in the gaming industry. Based in the San Francisco Bay Area, Wind Frog has been actively contributing to major gaming forums and communities, sharing expertise and passion for high-quality web games.</p>
+                    <div class="social-share">
+                        <a href="#" class="social-btn">♡</a>
+                        <a href="#" class="social-btn">f</a>
+                        <a href="#" class="social-btn">t</a>
+                        <a href="#" class="social-btn">in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "WindFrog's Web Games Collection",
+      "description": "A collection of free online web games including sports, puzzle and other fun games.",
+      "itemListElement": [
+        {
+          "@type": "Game",
+          "position": 1,
+          "name": "Football Bros",
+          "url": "https://playfootballbros.net",
+          "description": "Experience the thrill of multiplayer football in this exciting browser game."
+        },
+        {
+          "@type": "Game",
+          "position": 2,
+          "name": "Basketball Bros",
+          "url": "https://basketball-bros.online",
+          "description": "Show off your basketball skills in this fast-paced arcade game."
+        },
+        {
+          "@type": "Game",
+          "position": 3,
+          "name": "Speed Stars",
+          "url": "https://speedstarsunbocked.net",
+          "description": "Race against the fastest opponents in this thrilling running competition."
+        },
+        {
+          "@type": "Game",
+          "position": 4,
+          "name": "Baseball Bros",
+          "url": "https://baseballbrosunblocked.net",
+          "description": "Step up to the plate and hit home runs in this exciting baseball game."
+        },
+        {
+          "@type": "Game",
+          "position": 5,
+          "name": "Dino Game",
+          "url": "https://dinogame.onl",
+          "description": "Join the famous dinosaur on his adventure through the prehistoric world."
+        },
+        {
+          "@type": "Game",
+          "position": 6,
+          "name": "Chiikawa Puzzle Game",
+          "url": "https://chiikawapuzzle.co",
+          "description": "Solve adorable puzzles featuring the cute Chiikawa characters."
+        },
+        {
+          "@type": "Game",
+          "position": 7,
+          "name": "2048 Juego",
+          "url": "https://2048juego.com",
+          "description": "The classic number combining game with a Spanish twist."
+        },
+        {
+          "@type": "Game",
+          "position": 8,
+          "name": "2048 Cupcakes",
+          "url": "https://cupcakes2048.org",
+          "description": "A delicious twist on the classic 2048 game with cupcakes."
+        },
+        {
+          "@type": "Game",
+          "position": 9,
+          "name": "Color Block Jam",
+          "url": "https://color-block-jam.online",
+          "description": "Match colorful blocks in this vibrant puzzle game."
+        },
+        {
+          "@type": "Game",
+          "position": 10,
+          "name": "Block Blast",
+          "url": "https://blockblast.dev",
+          "description": "Blast through blocks in this exciting match-3 puzzle game."
+        },
+        {
+          "@type": "Game",
+          "position": 11,
+          "name": "Crazy Cattle 3D",
+          "url": "https://crazycattle3d.dev",
+          "description": "Round up crazy cattle in this fun 3D arcade game."
+        },
+        {
+          "@type": "Game",
+          "position": 12,
+          "name": "Block Breaker",
+          "url": "https://blockbreaker.onl",
+          "description": "The classic brick breaker game reimagined."
+        }
+      ]
+    }
+    </script>
+</body>
+</html>
