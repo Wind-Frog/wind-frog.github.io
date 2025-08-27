@@ -240,58 +240,19 @@
         <div class="content-section">
             <h2>Send Us a Message</h2>
             <p>Have questions, suggestions, or found a bug? Fill out the form below and we'll get back to you as soon as possible.</p>
-            
-            <form class="feedback-form" id="feedbackForm">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select a subject</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="bug">Bug Report</option>
-                        <option value="suggestion">Feature Suggestion</option>
-                        <option value="partnership">Partnership Opportunity</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-            
+
             <div class="contact-info">
-                <h2>Other Ways to Reach Us</h2>
+                <h2>Ways to Reach Us</h2>
                 
                 <div class="contact-methods">
                     <div class="contact-method">
                         <div class="contact-icon">@</div>
                         <div>
                             <strong>Email</strong><br>
-                            windfrog@example.com
+                            business@live.it
                         </div>
                     </div>
                     
-                    <div class="contact-method">
-                        <div class="contact-icon">F</div>
-                        <div>
-                            <strong>Follow Us</strong><br>
-                            <a href="#" style="color: var(--primary);">Facebook</a> | 
-                            <a href="#" style="color: var(--primary);">Twitter</a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -306,17 +267,6 @@
             </div>
         </div>
     </footer>
-    
-    <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // 这里可以添加表单提交逻辑
-            // 例如使用Formspree、EmailJS或自定义后端
-            
-            alert('Thank you for your feedback! We will get back to you soon.');
-            this.reset();
-        });
-    </script>
+
 </body>
 </html>
