@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WindFrog's Online Tools Collection - Free Web Utilities</title>
+    <meta name="description" content="Discover online tools created by WindFrog including screen tools, converters and other useful web utilities. Use directly in your browser with no downloads required.">
+    <meta name="keywords" content="online tools">
+    <meta name="author" content="Wind Frog">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://windfrog.github.io/online-tools.html">
+    <meta property="og:title" content="WindFrog's Online Tools Collection">
+    <meta property="og:description" content="Use free online tools created by WindFrog including screen tools, converters and other useful web utilities.">
+    <meta property="og:image" content="https://windfrog.github.io/social-preview-tools.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://windfrog.github.io/online-tools.html">
+    <meta property="twitter:title" content="WindFrog's Online Tools Collection">
+    <meta property="twitter:description" content="Use free online tools created by WindFrog including screen tools, converters and other useful web utilities.">
+    <meta property="twitter:image" content="https://windfrog.github.io/social-preview-tools.jpg">
+    
+    <style>
+        :root {
+            --primary: #07C160; /* 微信绿 */
+            --secondary: #06A456;
+            --accent: #FFC107;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #07C160;
+            --gray: #adb5bd;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 20px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4f5e8 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航选项卡 */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 2rem auto;
+            max-width: 500px;
+            border-radius: 50px;
+            background: white;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        .nav-tab {
+            flex: 1;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .nav-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .nav-tab:not(.active):hover {
+            background: #f0f0f0;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .creator-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+            color: var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.2rem 0 0.8rem;
+            color: var(--secondary);
+        }
+        
+        .category {
+            margin-bottom: 3rem;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .tool-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .tool-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+            background: #f0f7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tool-image img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            transition: var(--transition);
+        }
+        
+        .tool-card:hover .tool-image img {
+            transform: scale(1.05);
+        }
+        
+        .tool-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-description {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .use-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin-top: auto;
+        }
+        
+        .use-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .use-btn i {
+            margin-left: 8px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .about-content {
+            max-width: 800px;
+        }
+        
+        .about-content h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+                border-radius: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航选项卡 -->
+    <div class="container">
+        <div class="nav-tabs">
+            <a href="index.html" class="nav-tab">Web Games</a>
+            <a href="online-tools.html" class="nav-tab active">Online Tools</a>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <h1>WindFrog's Online Tools</h1>
+            <p class="subtitle">Discover useful online tools created by WindFrog - screen tools, converters and more. Use directly in your browser with no downloads required.</p>
+            <div class="creator-badge">All tools created by WindFrog</div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="category">
+            <h2>Online Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <img src="https://onlinetool.co/onlinetool.png" alt="OnlineTool.co">
+                    </div>
+                    <div class="tool-content">
+                        <h3>OnlineTool.co</h3>
+                        <p class="tool-description">A collection of various online utilities and tools for everyday use. Simple, fast and accessible from any device.</p>
+                        <a href="https://onlinetool.co" class="use-btn" target="_blank">Use OnlineTool →</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <img src="https://pantallanegra.com/ico.png" alt="Pantalla Negra">
+                    </div>
+                    <div class="tool-content">
+                        <h3>Pantalla Negra</h3>
+                        <p class="tool-description">Full screen black display tool. Useful for testing screens, presentations, or as a temporary monitor fix.</p>
+                        <a href="https://pantallanegra.com" class="use-btn" target="_blank">Use Black Screen →</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <img src="https://pantallablanca.com/ico.png" alt="Pantalla Blanca">
+                    </div>
+                    <div class="tool-content">
+                        <h3>Pantalla Blanca</h3>
+                        <p class="tool-description">Full screen white display tool. Ideal for checking pixel issues, presentations or as a light source.</p>
+                        <a href="https://pantallablanca.com" class="use-btn" target="_blank">Use White Screen →</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <img src="https://myphoneip.org/logo.png" alt="My Phone's IP Address">
+                    </div>
+                    <div class="tool-content">
+                        <h3>My Phone's IP Address</h3>
+                        <p class="tool-description">Instantly detect and display your device's IP address. Useful for network troubleshooting and configuration.</p>
+                        <a href="https://myphoneip.org" class="use-btn" target="_blank">Check IP Address →</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <img src="https://onlineruler.app/ico.png" alt="Online Ruler App">
+                    </div>
+                    <div class="tool-content">
+                        <h3>Online Ruler App</h3>
+                        <p class="tool-description">Digital ruler tool for measuring objects directly on your screen. Calibrate for accurate measurements.</p>
+                        <a href="https://onlineruler.app" class="use-btn" target="_blank">Use Online Ruler →</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <img src="https://timestamp.onl/ico.png" alt="Time Stamp Converter">
+                    </div>
+                    <div class="tool-content">
+                        <h3>Time Stamp Converter</h3>
+                        <p class="tool-description">Convert between Unix timestamps and human-readable dates. Essential tool for developers and data analysts.</p>
+                        <a href="https://timestamp.onl" class="use-btn" target="_blank">Convert Timestamp →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="category">
+            <h2>Classified Ads Website</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-image">
+                        <img src="https://huarentie.com/huarentie.gif" alt="Huarentie">
+                    </div>
+                    <div class="tool-content">
+                        <h3>Huarentie</h3>
+                        <p class="tool-description">Online classified ads platform for buying and selling goods and services. Simple, efficient and user-friendly.</p>
+                        <a href="https://huarentie.com" class="use-btn" target="_blank">Visit Huarentie →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="about">
+                <div class="avatar">WF</div>
+                <div class="about-content">
+                    <h3>About Wind Frog</h3>
+                    <p>Wind Frog is a seasoned web developer with 15 years of experience creating useful online tools and utilities. Based in the San Francisco Bay Area, Wind Frog has been actively contributing to major tech forums and communities, sharing expertise and passion for high-quality web tools. All tools on this site are created by Wind Frog.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "WindFrog's Online Tools Collection",
+      "description": "A collection of free online tools created by WindFrog including screen tools, converters and other useful utilities.",
+      "itemListElement": [
+        {
+          "@type": "WebApplication",
+          "position": 1,
+          "name": "OnlineTool.co",
+          "url": "https://onlinetool.co",
+          "description": "A collection of various online utilities and tools for everyday use."
+        },
+        {
+          "@type": "WebApplication",
+          "position": 2,
+          "name": "Pantalla Negra",
+          "url": "https://pantallanegra.com",
+          "description": "Full screen black display tool for testing screens and presentations."
+        },
+        {
+          "@type": "WebApplication",
+          "position": 3,
+          "name": "Pantalla Blanca",
+          "url": "https://pantallablanca.com",
+          "description": "Full screen white display tool for checking pixel issues and presentations."
+        },
+        {
+          "@type": "WebApplication",
+          "position": 4,
+          "name": "My Phone's IP Address",
+          "url": "https://myphoneip.org",
+          "description": "Tool to instantly detect and display your device's IP address."
+        },
+        {
+          "@type": "WebApplication",
+          "position": 5,
+          "name": "Online Ruler App",
+          "url": "https://onlineruler.app",
+          "description": "Digital ruler tool for measuring objects directly on your screen."
+        },
+        {
+          "@type": "WebApplication",
+          "position": 6,
+          "name": "Time Stamp Converter",
+          "url": "https://timestamp.onl",
+          "description": "Convert between Unix timestamps and human-readable dates."
+        },
+        {
+          "@type": "WebApplication",
+          "position": 7,
+          "name": "Huarentie",
+          "url": "https://huarentie.com",
+          "description": "Online classified ads platform for buying and selling goods and services."
+        }
+      ]
+    }
+    </script>
+</body>
+</html>
