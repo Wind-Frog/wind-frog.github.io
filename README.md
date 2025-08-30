@@ -26,27 +26,28 @@ Wind Frog is a seasoned web developer with 15 years of experience creating usefu
 1. [Chiikawa Puzzle Game](https://chiikawapuzzle.co)
    Solve adorable puzzles featuring the cute Chiikawa characters. Match pieces and complete challenging levels.
 
-3. [2048 Juego](https://2048juego.com)
+2. [2048 Juego](https://2048juego.com)
    The classic number combining game with a Spanish twist. Slide tiles and try to create the 2048 tile in this addictive puzzle.
 
 5. [2048 Cupcakes](https://cupcakes2048.org)
    A delicious twist on the classic 2048 game. Combine matching cupcakes to create higher value treats in this sweet puzzle.
 
-7. [Color Block Jam](https://color-block-jam.online)
+4. [Color Block Jam](https://color-block-jam.online)
    Match colorful blocks in this vibrant puzzle game. Create combinations and clear the board in this challenging game.
    
-9. [Block Blast](https://blockblast.dev)
+5. [Block Blast](https://blockblast.dev)
     Blast through blocks in this exciting match-3 puzzle game. Create powerful combinations and clear levels with strategy.
 
-11. [Outspell](https://outspell.app)
-    Play Outspell Game online, the free word spelling game that challenges your vocabulary and strategy. Form words, score big with multipliers, and beat the AI
 
 ## Other games
 1. [Crazy Cattle 3D](https://crazycattle3d.dev)
    Round up crazy cattle in this fun 3D arcade game. Navigate challenging environments and complete your missions.
 
-3. [Block Breaker](https://blockbreaker.onl)
+2. [Block Breaker](https://blockbreaker.onl)
    The classic brick breaker game reimagined. Bounce your ball to break all blocks while avoiding obstacles.
+
+3. [Outspell](https://outspell.app)
+   Play Outspell Game online, the free word spelling game that challenges your vocabulary and strategy. Form words, score big with multipliers, and beat the AI
 
 
 # wind frog's tools list
